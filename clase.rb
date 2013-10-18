@@ -25,58 +25,62 @@ class Racional
 	   Racional.new(@num,@den)
     end
     
- def suma(num,den)
-   if den == @den
-     result= den + @den
-     r=Racional.new(result,den)
+if :den == 0 || @den == 0
+ puts "ERROR el denominador no puede ser cero"
+  else
     
-   else
-     result = num*@den + @num*den
-     result1 =  (num*@den+@num)+(@num*den+num)
-     r=Racional.new(result,result1)
-   end
-   r.reducir
- end
- 
- def resta(num,den)
-   if den == @den
-     result= den - @den
-     r=Racional.new(result,den)
+    def suma(num,den)
+      if den == @den
+	result= den + @den
+	r=Racional.new(result,den)
+	
+      else
+	result = num*@den + @num*den
+	result1 =  (num*@den+@num)+(@num*den+num)
+	r=Racional.new(result,result1)
+      end
+      r.reducir
+    end
     
-   else
-     result = num*@den - @num*den
-     result1 =  (den*@den+@num)-(@den*den+num)
-     r=Racional.new(result,result1)
-   end
-   r.reducir
- end
- 
- 
- def producto(num,den)
+    def resta(num,den)
+      if den == @den
+	result= den - @den
+	r=Racional.new(result,den)
+	
+      else
+	result = num*@den - @num*den
+	result1 =  (den*@den+@num)-(@den*den+num)
+	r=Racional.new(result,result1)
+      end
+      r.reducir
+    end
     
-   result=num*@num
-   result1=den*@den
-   r=Racional.new(result,result1)
-   r.reducir
-   
- end
- 
- def division(num,den)
-   
-   result=num*@den
-   result1=den*@num
-   r=Racional.new(result,result1)
-   r.reducir
- end
- 
+    
+    def producto(num,den)
+	
+      result=num*@num
+      result1=den*@den
+      r=Racional.new(result,result1)
+      r.reducir
+      
+    end
+    
+    def division(num,den)
+      
+      result=num*@den
+      result1=den*@num
+      r=Racional.new(result,result1)
+      r.reducir
+    end
+  end
  
 end
-# 
-# t1 = Racional.new(2,3).suma(8,4) 
+
+# t1 = Racional.new(2,3).suma(6,3) 
 # puts t1.to_s
-# t2 = Racional.new(2,3).resta(8,4)
+# t2 = Racional.new(3,4).resta(1,3)
 # puts t2.to_s
-# t3=Racional.new(2,3).producto(8,4)
+# t3=Racional.new(2,3).producto(2,6)
 # puts t3.to_s
-# t4=Racional.new(2,3).division(8,4)
+# t4=Racional.new(2,3).division(8,7)
 # puts t4.to_s
